@@ -1,0 +1,7 @@
+bin/
+pkg/
+node_modules/
+npm-debug.log
+*.swp
+src/code.google.com
+src/github.com
