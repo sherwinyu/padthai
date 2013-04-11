@@ -5,6 +5,8 @@ setup:
 	go build -o bin/revel github.com/robfig/revel/cmd
 	npm install
 
-run:
-	npm start > peer.log &
-	./bin/revel run padthai/tracker
+peer:
+	npm start
+
+tracker:
+	GOPATH=`pwd` ./bin/revel run padthai/tracker
