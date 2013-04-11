@@ -5,3 +5,4 @@ npm-debug.log
 *.swp
 src/code.google.com
 src/github.com
+peer.log
