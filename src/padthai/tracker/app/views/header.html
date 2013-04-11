@@ -6,9 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="shortcut icon" type="image/png" href="/public/images/favicon.png">
-    <script src="/public/js/jquery-1.9.1.min.js"></script>
-    <script src="http://cdn.peerjs.com/0/peer.min.js"></script>
-    <script src="/public/js/app.js"></script>
+    {{if .isPad }}
+    <script data-main="/js/main" src="/js/require-jquery.js"></script>
+    {{end}}
     {{range .moreStyles}}
       <link rel="stylesheet" type="text/css" href="/public/{{.}}">
     {{end}}
