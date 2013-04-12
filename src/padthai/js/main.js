@@ -2,23 +2,26 @@ require.config({
     urlArgs: "t=" + (new Date()).getTime()
 });
 
+var sendMessage = function(){};
+
 require([
     "jquery",
-    "http://cdn.peerjs.com/0/peer.min.js",
+    "http://cdn.peerjs.com/0/peer.js",
     "peer",
-    "channel",
-    "editor"
-], function($, _, peer, channel, editor) {
+    "server",
+    "client"
+], function($, _, peer, server, client) {
     var getPadId = function() {
         return location.pathname.substring(1);
     };
     $.post(location.href + '/join', function(peer_id) {
         $.get(location.href + '/peers', function(peers) {
-            console.log("PEERS", peers);
-            var p = peer.createPeer(peer_id, peers);
+            var p = new peer.DistPeer(peer_id, peers),
+                s = new server.Server(p),
+                c = new client.Client(s);
             p.start();
-            var c = channel.createChannel(p);
-            var e = editor.createEditor(c);
+            // Just putting it in global scope to test.
+            sendMessage = p.send;
         });
     });
 });

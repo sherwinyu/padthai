@@ -9,4 +9,4 @@ peer:
 	npm start
 
 tracker:
-	GOPATH=`pwd` ./bin/revel run padthai/tracker
+	GOPATH=`pwd` ./bin/revel run padthai
