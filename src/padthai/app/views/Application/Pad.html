@@ -1,9 +1,9 @@
-{{set . "title" .id}}
+{{set . "title" .padId}}
 {{set . "isPad" true}}
 {{template "header.html" .}}
 
 <h1>Serving pad assets</h1>
-<p>Pad ID detected as {{.id}}</p>
+<p>Pad ID detected as {{.padId}}</p>
 
 {{template "footer.html" .}}
 

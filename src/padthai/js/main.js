@@ -12,9 +12,8 @@ require([
     var getPadId = function() {
         return location.pathname.substring(1);
     };
-    // TODO GENERATE PEER ID
-    $.post('join', function(peer_id) {
-        $.get('peers', function(peers) {
+    $.post(location.href + '/join', function(peer_id) {
+        $.get(location.href + '/peers', function(peers) {
             console.log("PEERS", peers);
             var p = peer.createPeer(peer_id, peers);
             p.start();
