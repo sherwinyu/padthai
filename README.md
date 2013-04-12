@@ -13,4 +13,5 @@ You must have PeerServer running at the same time as the main web app. The
 Makefile installs things and runs both for you:
 
     make setup
-    make run
+    make peer    # Peer server
+    make tracker # Tracker server
